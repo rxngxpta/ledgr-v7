@@ -347,7 +347,7 @@ except Exception:
 
 
 try:
-    cash_eq2 = bsheet2.loc['Cash Cash Equivalents & Short Term Investments'][0]
+    cash_eqv2 = bsheet2.loc['Cash Cash Equivalents & Short Term Investments'][0]
 except Exception:
     pass
 
@@ -452,7 +452,7 @@ try:
 except Exception:
     c_ratio1 = 'In the Works'
 try:
-    c_ratio2 = current_assets/current_liabilities
+    c_ratio2 = cash_eqv2/current_liabilities
 except Exception:
     c_ratio2 = 'In the Works'
     pass
