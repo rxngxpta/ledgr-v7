@@ -82,11 +82,11 @@ def CAPM(stock_a, stock_m):
     beta_reg, alpha = np.polyfit(x=data['Markt_Ret'],
                                  y=data['Inv_Ret'], deg=1)
     st.write('\n')
-    al0 = round(alpha, 4)
+    al0 = alpha.round(4)
     alpha_m = 100*al0
     st.write(25*'==')
     st.metric('Calculated Beta - Linear Regression: ',
-              round(beta_reg, 4))
+              beta_reg.round(4))
     st.metric('Calculated Alpha: ', alpha_m)
     st.write(25*'==')
     plt.figure(figsize=(13, 9))
@@ -126,7 +126,7 @@ def CAPM_daily(stock_a, stock_m):
     al = round(alpha, 6)
     alpha_d = al*100
     st.write(20*'==')
-    st.metric('Beta - Linear Regression: ', round(beta_reg, 6))
+    st.metric('Beta - Linear Regression: ', beta_reg.round(6))
     st.metric('Alpha: ', alpha_d)
     st.write(20*'==')
     plt.figure(figsize=(13, 9))
@@ -387,6 +387,7 @@ try:
     ebitda = pnl2.loc['EBITDA'][0]
 except Exception:
     ebitda = "Data Unreported"
+    pass
 
 try:
     current_debt = bsheet2.loc['Current Debt'][0]
