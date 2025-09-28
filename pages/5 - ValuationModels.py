@@ -751,7 +751,7 @@ with st.container(border=True):
     with g22:
         st.info('Measure a company\'s operating profit against its revenues')
     with g23:
-        st.metric("**Operating Profits Margin**", round(omr, 4))
+        st.metric("**Operating Profits Margin**", omr.round(4))
 
 st.write('-------------------------------------------------------------------')
 #####
@@ -761,7 +761,7 @@ with st.container(border=True):
     with g24:
         st.info('Assess company’s net profit w,r.t its equity capital')
     with g25:
-        st.metric("ROE = (Net Profit)÷Shareholder’s Equity", round(roe, 4))
+        st.metric("ROE = (Net Profit)÷Shareholder’s Equity", roe.round(4))
         # roe = net_profit/Average_Shareholders_Equity
 st.write('-------------------------------------------------------------------')
 with st.container(border=True):
@@ -791,7 +791,7 @@ with st.container(border=True):
                 in certain scenarios, indicate a 'Buy',
                 given that one has considered other relevant factors.""")
     with g29:
-        st.metric("P-B Ratio:", round(pbr, 4))
+        st.metric("P-B Ratio:", pbr.round(4))
     st.write("=>P-BV = (Market Price Per Share)÷(Book Value per share)")
 st.write('-------------------------------------------------------------------')
 with st.container(border=True):
@@ -801,7 +801,7 @@ with st.container(border=True):
         st.info('Gauge a security\'s price vs its Sales Turnover')
         st.caption("P/S = (Price per Share) ÷ (Annual Sales Per Share)")
     with h2:
-        st.metric("Price-to-Sales", round(p_s, 6))
+        st.metric("Price-to-Sales", p_s, 6))
 st.write('-------------------------------------------------------------------')
 with st.container(border=True):
     st.subheader('5.4 Market-to-Book-Ratio')
@@ -832,7 +832,7 @@ with st.container(border=True):
                 for every share outstanding.''')
     with g39:
         st.metric("Dividends Payable", dividends)
-        st.write("Dividend-per-Share:", dps)
+        st.write("Dividend-per-Share:", dps.round(4))
 
 st.write('-------------------------------------------------------------------')
 with st.container(border=True):
