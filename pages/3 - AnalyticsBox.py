@@ -642,7 +642,6 @@ def ichi(df):
     fig_ichi3.update_yaxes(title='Ichimoku', visible=True, showticklabels=True)
     return fig_ichi, l_ichi, fig_ichi2, fig_ichi3, l_ichi_b
 
-
 fig_ichi, l_ichi, fig_ichi2, fig_ichi3, l_ichi_b = ichi(df)
 
 
@@ -1327,7 +1326,7 @@ with st.container(border=True):
         st.info("""A moving average of the KST line is often used as a signal line, which can help traders identify buy and sell signals. A positive and rising KST line suggests an uptrend, while a negative and falling KST line indicates a downtrend.""")
         st.info("""When the KST line crosses above its signal line from below, it can be interpreted as a buy signal. Conversely, a crossover of the KST line below its signal line from above can signal a sell opportunity""")
     elif choix1 == "Ichimoku Kinkō Hyō (Ichimoku)":
-        fig_ichi, l_ichi, fig_ichi2, fig_ichi3 = ichi(df)
+        fig_ichi, l_ichi, fig_ichi2, fig_ichi3, l_ichi_b = ichi(df)
         ich1, ich2, ich3 = st.columns([3, 1, 1])
         with ich1:
             st.subheader("Ichimoku Kinkō Hyō")
