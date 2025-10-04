@@ -801,7 +801,7 @@ with st.container(border=True):
         st.info('Gauge a security\'s price vs its Sales Turnover')
         st.caption("P/S = (Price per Share) ÷ (Annual Sales Per Share)")
     with h2:
-        st.metric("Price-to-Sales", p_s, 6))
+        st.metric("Price-to-Sales", p_s, 6)
 st.write('-------------------------------------------------------------------')
 with st.container(border=True):
     st.subheader('5.4 Market-to-Book-Ratio')
