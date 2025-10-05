@@ -123,7 +123,7 @@ def CAPM_daily(stock_a, stock_m):
     beta_reg, alpha = np.polyfit(x=data['Markt_Ret'],
                                  y=data['Inv_Ret'], deg=1)
     st.write('\n')
-    al = round(alpha, 6)
+    al = alpha.round(6)
     alpha_d = al*100
     st.write(20*'==')
     st.metric('Beta - Linear Regression: ', beta_reg.round(6))
@@ -670,7 +670,7 @@ with st.container(border=True):
         it means it is leveraging more,
         and it is more vulnerable to interest rates.''')
     with g13:
-        st.metric("Debt-to-Equity Ratio", round(der, 4))
+        st.metric("Debt-to-Equity Ratio", der)
 
 st.write('-------------------------------------------------------------------')
 with st.container(border=True):
@@ -700,7 +700,7 @@ with st.container(border=True):
     with g16:
         st.info('Measure how a company uses its assets to generate revenue.')
     with g17:
-        st.metric("**=> ATR = Net Sales/Total Revenues**", round(atr, 4))
+        st.metric("**=> ATR = Net Sales/Total Revenues**", atr.round(4))
 
 st.write('-------------------------------------------------------------------')
 with st.container(border=True):
@@ -710,7 +710,7 @@ with st.container(border=True):
         st.info('''Inventory turnover is the rate that inventory stock is sold,
                 or used, and replaced''')
     with h18:
-        st.metric('**=>COGS/Avg. Value of Inventory**', round(itr, 4))
+        st.metric('**=>COGS/Avg. Value of Inventory**', itr.round(4))
     st.write('''Measures how many times a Firm\'s Inventory is used and
              sold over a period''')
 
@@ -722,7 +722,7 @@ with st.container(border=True):
         st.info('Mark the avg days it takes to turn inventory into sales')
     with g19:
         st.metric("=>DSI = (Avg. Value of Inventory/COGS)X365: DSI",
-                  round(dsi, 4))
+                  dsi.round(4))
 st.write('-------------------------------------------------------------------')
 # ################################################
 with st.container(border=True):
@@ -740,7 +740,7 @@ with st.container(border=True):
         st.info('''The gross margin ratio is a percentage that quantify gains
                 a company makes for each dollar of revenue.''')
     with g21:
-        st.metric("**=>GMR = (Revenues - COGS)/Revenues**", round(gmr, 4))
+        st.metric("**=>GMR = (Revenues - COGS)/Revenues**", gmr.round(4))
     st.write("""A higher ratio indicates that a company is efficiently managing
              its costs and pricing""")
 st.write('-------------------------------------------------------------------')
@@ -778,7 +778,7 @@ with st.container(border=True):
         st.info("Gauge if the stock is worth buying.")
     with g43:
         st.metric("=>BV=Total Stockholders' Equity/Total Outstanding Shares",
-                  round(book_value/10000000, 4))
+                  book_value/10000000)
     st.write("""This is the valuation as reflected in the audited books
              of the company.""")
 st.write('-------------------------------------------------------------------')
@@ -801,7 +801,7 @@ with st.container(border=True):
         st.info('Gauge a security\'s price vs its Sales Turnover')
         st.caption("P/S = (Price per Share) ÷ (Annual Sales Per Share)")
     with h2:
-        st.metric("Price-to-Sales", p_s, 6)
+        st.metric("Price-to-Sales", p_s)
 st.write('-------------------------------------------------------------------')
 with st.container(border=True):
     st.subheader('5.4 Market-to-Book-Ratio')
