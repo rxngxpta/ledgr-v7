@@ -123,11 +123,11 @@ def CAPM_daily(stock_a, stock_m):
     beta_reg, alpha = np.polyfit(x=data['Markt_Ret'],
                                  y=data['Inv_Ret'], deg=1)
     st.write('\n')
-    al = alpha.round(6)
+    al = alpha.round(4)
     alpha_d = al*100
     st.write(20*'==')
-    st.metric('Beta - Linear Regression: ', beta_reg.round(6))
-    st.metric('Alpha: ', alpha_d)
+    st.metric('Beta - Linear Regression: ', beta_reg.round(4))
+    st.metric('Alpha: ', alpha_d.round(4))
     st.write(20*'==')
     plt.figure(figsize=(13, 9))
     plt.axvline(0, color='grey', alpha=0.5)
@@ -563,7 +563,7 @@ except Exception:
     pass
 
 pe = shares_outstanding*stock_price/net_income
-pe = round(pe, 3)
+pe = pe.round(3)
 
 
 #####################################################################
@@ -604,7 +604,7 @@ with st.container(border=True):
             other payables.
             A current ratio that is in line with the industry average or
             slightly higher is generally considered acceptable.""")
-    st.metric("Current Ratio", round(cr, 4))
+    st.metric("Current Ratio", cr)
     st.markdown("""A Firm with a CR less than one means that its Equity heavy
                 and shall not be able to manage its short term payouts""")
 
@@ -630,7 +630,7 @@ with st.container(border=True):
     with g6:
         st.info("**=>Cash Ratio=(Cash + Cash Equivalents)÷Current Liabilities")
     with g7:
-        st.metric("Cash Ratio)", round(c_ratio1, 4))
+        st.metric("Cash Ratio)", c_ratio1)
     st.write("""If a Firm's cash ratio is around 0.6, it means that for every
              dollar borrowed, it has only 0.6 dollars to pay back.""")
 
@@ -640,7 +640,7 @@ with st.container(border=True):
     with g8:
         st.info('Measure how much a company earns against its borrowings.')
     with g9:
-        st.metric("**=>OCFR = Total Revenue - (COGS -+OPEX)**", round(ocfr, 4))
+        st.metric("**=>OCFR = Total Revenue - (COGS -+OPEX)**", ocfr)
     st.write("=>OCFR = Cash Flow from Operations/Current Liabilities")
 
 st.write('-------------------------------------------------------------------')
@@ -832,7 +832,7 @@ with st.container(border=True):
                 for every share outstanding.''')
     with g39:
         st.metric("Dividends Payable", dividends)
-        st.write("Dividend-per-Share:", dps.round(4))
+        st.write("Dividend-per-Share:", dps)
 
 st.write('-------------------------------------------------------------------')
 with st.container(border=True):
