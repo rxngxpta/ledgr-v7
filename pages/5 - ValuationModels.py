@@ -373,7 +373,8 @@ except Exception:
 try:
     total_liabilities = bsheet2.loc['Total Liabilities'][0]
 except Exception:
-    total_liabilities = "Data Unreported"
+    total_liabilities = bsheet2.loc['Total Liabilities Net Minority Interest'][0]
+else:
     pass
 
 
@@ -443,7 +444,8 @@ try:
     acr = (cash + accounts_receivable)/current_liabilities
     acr = acr.round(4)
 except Exception:
-    acr = (cash_eq2/current_liabilities).round(4)
+    acr = (cash_eq2/current_liabilities)
+    acr = acr.round(4)
     pass
 
 
